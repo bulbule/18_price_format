@@ -32,5 +32,5 @@ def round_float_number_to_two_decimals(number):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('price', help='a price to format')
-    args = parser.args_parse()
+    args = parser.parse_args()
     print(format_price(args.price))
