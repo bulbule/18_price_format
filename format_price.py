@@ -1,5 +1,4 @@
 import argparse
-from decimal import *
 
 
 def format_price(price):
@@ -21,12 +20,11 @@ def format_price(price):
 
 
 def round_float_number_to_two_decimals(number):
-    getcontext().prec = 30
-    return float(
-        Decimal(
-            '{}'.format(number)).quantize(
-            Decimal('.01'),
-            rounding=ROUND_UP))
+    number = float('{:.2f}'.format(number))
+    if (number).is_integer():
+        return int(number)
+    else:
+        return number
 
 
 if __name__ == '__main__':

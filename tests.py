@@ -6,6 +6,9 @@ class FormatPriceTestCase(unittest.TestCase):
     def test_big_integer_price_with_zero_decimals(self):
         self.assertEqual(format_price('123456.000'), '123 456')
     
+    def test_almost_integer_price(self):
+        self.assertEqual(format_price(12535.0000010), '12 535')
+    
     def test_big_integer_price(self):
         self.assertEqual(format_price(987654321), '987 654 321')   
     
